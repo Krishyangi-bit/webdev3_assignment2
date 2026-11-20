@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1>Students</h1>
+        <p class="muted">Student Management REST API · Express.js</p>
+      </div>
+      <span id="count" class="count">0</span>
+    </header>
+
+    <section class="card">
+      <h2 id="form-title">Add student</h2>
+      <form id="student-form" novalidate>
+        <input type="hidden" id="student-id" />
+        <div class="grid">
+          <label>Name<input id="name" type="text" placeholder="Rahul Sharma" required /></label>
+          <label>Email<input id="email" type="email" placeholder="rahul@example.com" required /></label>
+          <label>Course<input id="course" type="text" placeholder="BCA" required /></label>
+          <label>Age<input id="age" type="number" min="1" placeholder="20" required /></label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-btn" class="btn primary">Add student</button>
+          <button type="button" id="cancel-btn" class="btn" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by name, email or course" />
+        <input id="find-id" type="number" min="1" placeholder="Find by ID" />
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Age</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="student-list"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>No students found.</p>
+    </section>
+
+    <footer class="status">
+      <span class="muted">Last response</span>
+      <code id="status">—</code>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

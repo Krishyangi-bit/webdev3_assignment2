@@ -1,0 +1,14 @@
+{
+  "name": "student-management-api",
+  "version": "1.0.0",
+  "description": "Student Management REST API built with Node.js and Express (in-memory JSON data, MVC structure)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.3"
+  }
+}
